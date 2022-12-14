@@ -18,7 +18,7 @@ def parse_molecules():
     data = {}
     for f in os.listdir(path):
         with open(path.joinpath(f), 'r') as stream:
-            data[f.strip('.yaml')] = yaml.safe_load(stream)
+            data[f.removesuffix('.yaml')] = yaml.safe_load(stream)
     return data
 
 
